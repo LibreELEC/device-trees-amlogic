@@ -1,11 +1,7 @@
-#include "gxl_p281_1g.dts"
+#include "gxl_p281_2g.dts"
 
 / {
 	le-dt-id = "gxl_p281_2g_tx3mini";
-
-	memory@00000000 {
-		linux,usable-memory = <0x0 0x100000 0x0 0x7ff00000>;
-	};
 
 	fd628_dev {
 		compatible = "amlogic,fd628_dev";
