@@ -1,7 +1,7 @@
 #include "gxl_p281_1g.dts"
 
 / {
-	le-dt-id = "gxl_p281_1g_tx3mini";
+	le-dt-id = "gxl_p281_1g_tanixtx3";
 
 	fd628_dev {
 		compatible = "amlogic,fd628_dev";
