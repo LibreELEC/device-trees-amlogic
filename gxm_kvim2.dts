@@ -51,10 +51,10 @@
 	dvb {
 		compatible = "amlogic,dvb";
 		dev_name = "dvb";
-		ts0 = "parallel";
+		ts0 = "serial";
 		ts0_control = <0x0>;
 		ts0_invert = <0x0>;
-		fec_reset_gpio-gpios = <&gpio GPIODV_13 GPIO_ACTIVE_HIGH>;
+		fec_reset_gpio-gpios = <&gpio GPIODV_12 GPIO_ACTIVE_HIGH>;
 		power_ctrl_gpio-gpios = <&gpio GPIODV_11 GPIO_ACTIVE_LOW>;
 		pinctrl-names = "p_ts0", "s_ts0", "s_ts1";
 		pinctrl-0 = <&dvb_p_ts0_pins>;
@@ -72,10 +72,11 @@
 		dtv_demod0_i2c_adap_id = <2>;
 		dtv_demod0_i2c_addr = <0x60>;
  		dtv_demod0_reset_value = <0>;
-		dtv_demod0_reset_gpio-gpios = <&gpio GPIODV_13 GPIO_ACTIVE_LOW>;
-		dtv_demod0_power_gpio-gpios = <&gpio GPIODV_14 GPIO_ACTIVE_LOW>;
+		dtv_demod0_reset_gpio-gpios = <&gpio  GPIODV_12  GPIO_ACTIVE_HIGH>;
+		dtv_demod0_power_gpio-gpios = <&gpio  GPIODV_20  GPIO_ACTIVE_HIGH>;
+		dtv_demod0_lock_gpio-gpios = <&gpio  GPIODV_11  GPIO_ACTIVE_HIGH>;
 		fe0_dtv_demod = <0>;
-		fe0_ts = <0>;
+		fe0_ts = <1>;
 		fe0_dev = <0>;
 	};
 };
@@ -122,7 +123,7 @@
 	};
 
 	dtv_params_pin:dtv_params_pin {
-		amlogic,clrmask = <0x1 0x38000000 0x3 0x80>;
-		amlogic,pins = "GPIODV_13", "GPIODV_14", "GPIODV_15";
+		amlogic,clrmask=<1 0xC2000000 2 0xC00400 3 0xA0>;
+		amlogic,pins = "GPIODV_11", "GPIODV_12", "GPIODV_20";
 	};
 };
